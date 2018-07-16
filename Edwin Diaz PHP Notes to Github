@@ -1,0 +1,69 @@
+DATABASES AND CRUD HOW TO
+1. Creating records in the database using PHP in previous lecture. Create table in PHP.
+
+Remember, always pick AI when creating new users in PHPMyAdmin. 
+
+2. Start with Create, now do Read in CRUD. 
+    To read data from the database, remember to write a query. SELECT FROM * is the most popular and commonly used. 
+    Write a while loop in php like this to grab data and read it in the HTML part of the code: 
+        <?php 
+            while ($row = mysqli_fetch_row(variable)) {
+                print_r(variable); 
+            }
+
+        ?>
+
+        Mysqli_fetch_assoc returns associateive arrays if I want to grab one of those values in my code.
+
+        Proper way to do a pre tag in PHP to display data in a more more organized way: 
+                <?php
+    
+        while($row = mysqli_fetch_assoc($result)) { 
+    ?>
+
+        <pre> 
+
+        <?php
+        print_r($row); 
+        ?>
+        
+        </pre>
+
+        <?php
+
+
+        }
+
+        ?>
+
+NEXT VIDEO shows me how to read things from the database and start using functions in PHP to better organize the code. 
+
+For example, I would need to write <?php include .....> in another file and add the PHP connection stuff in the file I'd be referring to. 
+
+From there, it's easy to include HTML, he shows me how to grab ids from PHPMyAdmin like this: 
+
+ while($row = mysqli_fetch_assoc($result)) { 
+
+          $id =  $row['id']; 
+
+            echo  "<option value='$id'>$id</option>";
+
+
+ }
+
+Make sure when creating your CRUD app that you use the global variable as well as you're trying to create these databases.
+
+
+Note, be careful with the way that I have brackets in files like my functions.php file. One little mistake there could cause my whole code to disappear. 
+As a point for next time, I can also debug my code by playing around with each component and testing it in the browser to pinpoint where the problem is. 
+If it's not anything wrong with the code, check my database in PHPMyAdmin and if that doesn't work, then consult someone for help.  :) 
+
+How to print only one part of database query. It's really easy. Just use this: 
+
+while ($record = mysqli_fetch_assoc($result)) { 
+    print_r($record['value_ive_created_in_phpmyadmin']);
+    
+}
+
+I may practice this again later today  with making my own third database, but trying to make the values a bit more complex to see if this will also work or not. 
+
